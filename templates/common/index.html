@@ -1,0 +1,95 @@
+{% extends 'base/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Teamup-Home</title>
+</head>
+{% block content %}
+<div class="container pt-3">
+    <h2 class="pt-2 pb-2">New Projects</h2>
+    <!--new project content-->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for item in object_list reversed %}
+        {% if forloop.counter <= 6 %}
+        <!--object_list-->
+        <a href="{% url 'teamupweb:detail' item.pk %}">
+        <div class="col">
+          <div class="card">
+            <img src="{% static '' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{item.PPtitle}}</h5>
+              <p class="card-text">{{item.PPcontext | truncatechars:50}}</p>
+            </div>
+          </div>
+        </div>
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class="text-center pt-4 pb-3">
+        <a href="{% url 'teamupweb:projectlist' %}"><button type="button" class="btn btn-outline-primary col-4">Search more</button></a>
+    </div>
+    <!-- <hr class="my-3"> -->
+    <div class="">
+      
+    </div>
+    <!-- <hr class="my-3">
+    <h2 class="pt-2 pb-2">Weekly ranking</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+          </div>
+        </div>
+    </div> -->
+    <hr class="my-4">
+    <!-- <h2 class="pt-2 pb-2">What is "Teamup"</h2>
+    <div class="HowToUse">
+      <h3>Teamup is where project owners and participants meet. Here, you can create a team to bring your ideas to life and easily find great teammates. They say "one person is strong," but we believe "a team is even stronger." Join TeamUp now and create a team to realize your ideas!</h3>
+    </div> -->
+</div>
+<!--
+                            @@@
+                            @@@
+@@@@@@@@@@@@@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@teamup
+@@         @@@@@@@@@@@      @@@
+ @@        @@@@@@@@@@       @@@     @@@@@@@@    @@@@@@@    @@@@@@@@@@@@@@@    @@     @@    @@@@@@@@
+  @@       @@@@@@@@@        @@@    @@      @@         @@   @@     @@     @@   @@     @@   @@@     @@
+   @@@     @@@@@@@@         @@@    @@@@@@@@@@    @@@@@@@   @@     @@     @@   @@     @@   @@      @@
+     @@@   @@@@@@@          @@@    @@          @@@    @@   @@     @@     @@   @@     @@   @@      @@
+     @@    @@@@@@           @@@     @@     @   @@     @@   @@     @@     @@   @@     @@   @@@    @@
+     @@@@@@@@@@@@            @@@@@   @@@@@@@    @@@@@@@@   @@     @@     @@    @@@@@@@@   @@ @@@@@
+                                                                                          @@
+                                                                                          @@
+We are looking for Engineer!!!
+We need : FrontEngineer(html,css,js,etc...), BackendEngineer(python,rube,php,etc...), 
+-->
+{% endblock content %}
+</html>

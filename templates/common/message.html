@@ -1,0 +1,37 @@
+{% extends 'base/base_2layer.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Teamup-Message</title>
+</head>
+{% block content %}
+<div class="container pt-3">
+    <!--start breadcrumb-->
+    <nav aria-level="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb_item active"><a href="{% url 'teamupweb:index' %}"><i class="fa fa-home">home</a> > Message</li>
+        </ol>
+    </nav>
+    <!--end breadcrumb-->
+    <div class="row">
+        <div class="col-4" style="background-color: blueviolet;">
+            Message-User
+            <div class="list_group pt-2 pb-2">
+                <a href="" class="list-group-item list-group-item-action">TEST USER</a>
+                <a href="" class="list-group-item list-group-item-action">TEST USER</a>
+                <a href="" class="list-group-item list-group-item-action">TEST USER</a>
+                <a href="" class="list-group-item list-group-item-action">TEST USER</a>
+            </div>
+        </div>
+        <div class="col-8" style="background-color: aqua;">
+            Message-inner
+        </div>
+    </div>
+</div>
+{% endblock content %}
+</html>
