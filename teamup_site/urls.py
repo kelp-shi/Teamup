@@ -10,9 +10,7 @@ urlpatterns = [
     path('test/', views.test, name='test'),
     path('projectList/', ProjectList.as_view(), name='projectlist'),
     path('postproject/', ProjectCreateView.as_view(), name='postproject'),
-    # path('CheckPostProject/'),
     path('Detail/<int:pk>/', views.ProjectDetail, name='detail'),
     path('profile/<str:username>/', ProfileView.as_view(), name='profile'),
     path('help/', views.Help, name='help'),
-    # path('')
 ]

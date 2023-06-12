@@ -44,8 +44,6 @@ class ProjectCreateView(LoginRequiredMixin, CreateView):
         form.instance.PPuser = self.request.user
         return super().form_valid(form)
 
-# -----------------------------------------------
-
 def ProjectDetail(request, pk):
     detail = get_object_or_404(PostProject, pk=pk)
     return render(request, 'common/detail.html', {'detail': detail})
@@ -61,7 +59,6 @@ def test(request):
             name = tag.name,
         )
     return render(request, 'common/test.html', {'form': form})
-# ------------------------------------------
 
 # profile ----------------------------------
 class ProfileView(DetailView):
@@ -71,8 +68,8 @@ class ProfileView(DetailView):
     slug_url_kwarg = 'username'
     queryset = CustomUser.objects.all()
     context_object_name = 'profile'
-# ------------------------------------------
 
+# help -------------------------------------
 def Help(request):
     return render(request, 'common/help.html')
 

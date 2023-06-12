@@ -51,9 +51,9 @@ class PostProject(models.Model):
     PPcontext = models.TextField(max_length=2000) #プロジェクトコンテキスト
     PPimg = models.ImageField(upload_to='static/images') #プロジェクトイメージ
     PPuser = models.ForeignKey(CustomUser, on_delete=models.CASCADE, blank=True, null=True) #投稿ユーザー
-    #like = models.ManyToManyField(User, related_name='', blank=True) #いいね
     PCworktag   = models.ManyToManyField(ProjectTags, verbose_name='tag') #プロジェクトタグ
     #PPviewCount = models.PositiveIntegerField(default=0) #閲覧数カウント
+    #like = models.ManyToManyField(User, related_name='', blank=True) #いいね
     created_at = models.DateTimeField(auto_now_add=True,) #投稿時刻
 
     def __str__(self):
