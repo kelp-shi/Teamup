@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4r-13!sj$39_l_n4p+71x!(8=&!1=idgs^^dvjaz^u*vg0pjbu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['35.73.178.77']
 
 
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     #myapp
     'teamup_site',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -174,4 +175,3 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'     #リダイレクト先をhomeページに設定。詳細後述          
 ACCOUNT_LOGOUT_REDIRECT_URL = 'http://35.73.178.77:8000/accounts/login/'
 
-ALLOWED_HOSTS = ['35.73.178.77']
