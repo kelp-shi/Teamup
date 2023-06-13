@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <form method="post">{% csrf_token %}
+        <p>削除しますと復旧ができません。よろしいですか？</p>
+        <input type="submit" value="削除する">
+    </form>
+</div>
+{% endblock content %}

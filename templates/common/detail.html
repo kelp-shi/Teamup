@@ -25,6 +25,11 @@
     <p class="text-break">{{detail.PPcontext}}</p>
     <p>Posted : {{detail.created_at | date:'Y-m-d'}}</p>
     <hr class="my-3">
+    {% if CustomUser.get_username == detail.PPuser %}
+    <a href="{% url 'teamupweb:projectdelete' detail.pk %}"><button type="submit" class="btn btn-outline-danger">Delete Project</button></a>
+    {% else %}
+    No data
+    {% endif %}
     <!-- <div class="joinbt">
         <button type="button" class="btn btn-outline-success btn-lg">Contact Owner</button>
         <p class="text-muted">Click the button to send a participation request Message to the project owner. (No cost).
