@@ -57,6 +57,11 @@ class ProjectDetails(DetailView):
     usermodel = CustomUser
     queryset = PostProject.objects.all()
     user_query = CustomUser.objects.all()
+    ctx = {
+        "detail":queryset,
+        "user":user_query,
+    }
+
     
 #function base view
 class ProjectDelete(LoginRequiredMixin, DeleteView):
