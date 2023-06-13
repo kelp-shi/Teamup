@@ -25,7 +25,7 @@
     <p class="text-break">{{detail.PPcontext}}</p>
     <p>Posted : {{detail.created_at | date:'Y-m-d'}}</p>
     <hr class="my-3">
-    {% if CustomUser.get_username == detail.PPuser %}
+    {% if user.username == detail.PPuser %}
     <a href="{% url 'teamupweb:projectdelete' detail.pk %}"><button type="submit" class="btn btn-outline-danger">Delete Project</button></a>
     {% else %}
     No data

@@ -62,7 +62,6 @@ class ProjectDetails(DetailView):
         "user":user_query,
     }
 
-    
 #function base view
 class ProjectDelete(LoginRequiredMixin, DeleteView):
     model = PostProject
